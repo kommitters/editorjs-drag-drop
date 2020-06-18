@@ -4,20 +4,17 @@ export default class DragDrop {
   constructor(editor) {
     this.editor = editor;
     this.api = this.editor.blocks;
+    this.holder = document.getElementById(this.editor.configuration.holder);
 
     this.startBlock = null;
     this.endBlock = null;
 
-    this.setEventListeners();
-  }
-
-  setEventListeners() {
     this.setDragListener();
     this.setDropListener();
   }
 
   setDragListener() {
-    const settingsButton = document.getElementsByClassName('ce-toolbar__settings-btn')[0];
+    const settingsButton = this.holder.querySelector('.ce-toolbar__settings-btn');
 
     settingsButton.setAttribute('draggable', 'true');
     settingsButton.addEventListener('dragstart', () => {
@@ -28,10 +25,12 @@ export default class DragDrop {
   setDropListener() {
     document.addEventListener('drop', (el) => {
       const { target } = el;
-      const dropTarget = this.getDropTarget(target);
-      if (dropTarget) {
-        this.endBlock = this.getTargetPosition(dropTarget);
-        this.moveBlocks();
+      if (this.holder.contains(target)) {
+        const dropTarget = this.getDropTarget(target);
+        if (dropTarget) {
+          this.endBlock = this.getTargetPosition(dropTarget);
+          this.moveBlocks();
+        }
       }
     });
   }
