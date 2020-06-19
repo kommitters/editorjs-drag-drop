@@ -1,16 +1,17 @@
 {
-  "name": "editorjs-inline-image",
-  "version": "0.1.1",
+  "name": "editorjs-drag-drop",
+  "version": "0.1.0",
   "keywords": [
-    "tool",
-    "image",
-    "server-less",
+    "drag",
+    "drop",
+    "dragdrop",
+    "draganddrop",
     "editor.js",
     "editorjs"
   ],
-  "description": "InlineImage Tool for Editor.js",
+  "description": "Drag and Drop feature for Editor.js",
   "license": "MIT",
-  "repository": "https://github.com/kommitters/editorjs-inline-image",
+  "repository": "https://github.com/kommitters/editorjs-drag-drop",
   "main": "./dist/bundle.js",
   "scripts": {
     "build": "webpack --mode production",
