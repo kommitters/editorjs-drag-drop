@@ -24,7 +24,6 @@
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.10.1",
-    "@testing-library/jest-dom": "^5.9.0",
     "babel-jest": "^26.0.1",
     "babel-loader": "^8.0.5",
     "css-loader": "^1.0.0",
@@ -43,9 +42,6 @@
     "axios": "^0.19.2"
   },
   "jest": {
-    "setupFilesAfterEnv": [
-      "<rootDir>/test/config/setupTests.js"
-    ],
     "transform": {
       "^.+\\.jsx?$": "babel-jest",
       "^.+\\.(css|svg)$": "<rootDir>/test/config/assetsTransform.js"

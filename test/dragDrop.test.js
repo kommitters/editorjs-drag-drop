@@ -7,21 +7,26 @@ describe('DragDrop', () => {
   + '<div class="ce-toolbar__settings-btn">Drag</div></div>';
   document.body.innerHTML = content;
 
-  const dragDrop = new DragDrop(editor);
+  let dragDrop;
+  let button;
+
+  beforeEach(() => {
+    dragDrop = new DragDrop(editor);
+    button = dragDrop.holder.querySelector('.ce-toolbar__settings-btn');
+    button.dispatchEvent(new Event('dragstart'));
+  });
 
   it('executes getCurrentBlockIndex when button is dragged', () => {
-    const button = dragDrop.holder.querySelector('.ce-toolbar__settings-btn');
-    button.dispatchEvent(new Event('dragstart'));
     expect(editor.blocks.getCurrentBlockIndex).toBeCalled();
     expect(dragDrop.startBlock).toEqual(0);
   });
 
-  dragDrop.getTargetPosition = jest.spyOn(dragDrop, 'getTargetPosition');
+  const getTargetPosition = jest.spyOn(DragDrop.prototype, 'getTargetPosition');
 
   it('executes move when button is dropped', () => {
     const target = document.getElementById('second');
     target.dispatchEvent(new Event('drop', { bubbles: true }));
-    expect(dragDrop.getTargetPosition).toBeCalled();
+    expect(getTargetPosition).toBeCalled();
     expect(dragDrop.endBlock).toEqual(1);
     expect(editor.blocks.move).toBeCalledWith(1, 0);
   });
