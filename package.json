@@ -1,0 +1,51 @@
+{
+  "name": "editorjs-drag-drop",
+  "version": "0.1.0",
+  "keywords": [
+    "drag",
+    "drop",
+    "dragdrop",
+    "draganddrop",
+    "editor.js",
+    "editorjs"
+  ],
+  "description": "Drag and Drop feature for Editor.js",
+  "license": "MIT",
+  "repository": "https://github.com/kommitters/editorjs-drag-drop",
+  "main": "./dist/bundle.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development --watch",
+    "test": "jest"
+  },
+  "author": {
+    "name": "kommit",
+    "email": "info@kommit.co"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.10.1",
+    "babel-jest": "^26.0.1",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^1.0.0",
+    "eslint": "^7.1.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.13.2",
+    "jest": "^26.0.1",
+    "nock": "^12.0.3",
+    "style-loader": "^0.21.0",
+    "svg-inline-loader": "^0.8.2",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
+  },
+  "dependencies": {
+    "axios": "^0.19.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest",
+      "^.+\\.(css|svg)$": "<rootDir>/test/config/assetsTransform.js"
+    }
+  }
+}
