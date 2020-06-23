@@ -1,3 +1,6 @@
+/**
+ * Mocks Editor.js instance object.
+ */
 const editor = {
   blocks: {
     getCurrentBlockIndex: jest.fn(() => 0),
