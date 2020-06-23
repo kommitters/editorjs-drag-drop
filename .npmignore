@@ -1,6 +1,7 @@
 .idea/
 src/
 test/
+assets/
 .eslintrc.js
 babel.config.json
 webpack.config.js
