@@ -23,8 +23,8 @@ export default class DragDrop {
   }
 
   setDropListener() {
-    document.addEventListener('drop', (el) => {
-      const { target } = el;
+    document.addEventListener('drop', (event) => {
+      const { target } = event;
       if (this.holder.contains(target)) {
         const dropTarget = this.getDropTarget(target);
         if (dropTarget) {
