@@ -62,6 +62,9 @@ $ yarn test
 ## Contributing and Development
 Bug reports and pull requests are welcome on GitHub https://github.com/kommitters/editorjs-drag-drop. Everyone is welcome to participate in the project.
 
+## Changelog
+See the [CHANGELOG](https://github.com/kommitters/editorjs-drag-drop/blob/master/CHANGELOG.md) for versions details.
+
 ## License
 See [LICENSE](https://github.com/kommitters/editorjs-drag-drop/blob/master/LICENSE) for details.
 
