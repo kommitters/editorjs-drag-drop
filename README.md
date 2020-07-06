@@ -57,3 +57,13 @@ $ yarn build
 ```shell
 $ yarn test
 ```
+
+
+## Contributing and Development
+Bug reports and pull requests are welcome on GitHub https://github.com/kommitters/editorjs-drag-drop. Everyone is welcome to participate in the project.
+
+## License
+See [LICENSE](https://github.com/kommitters/editorjs-drag-drop/blob/master/LICENSE) for details.
+
+## Credits
+Made with 💙 by [kommit](https://kommit.co)
