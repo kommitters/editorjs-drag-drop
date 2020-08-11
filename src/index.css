@@ -1,5 +1,7 @@
 .ce-block--drop-target .ce-block__content{
-  border: 1px dashed #a0a0a0;
+  outline-color: #a0a0a0;
+  outline-style: dashed;
+  outline-width: 1px;
 }
 
 .ce-block--drop-target .ce-block__content:before {
