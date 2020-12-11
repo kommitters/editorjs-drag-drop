@@ -32,7 +32,18 @@ const editor = new EditorJS({
 });
 ```
 
-Select the block, drag the toolbar settings button and drop it at the desired position. 
+Select the block, drag the toolbar settings button and drop it at the desired position.
+
+If you're already using [editorjs-undo](https://github.com/kommitters/editorjs-undo), then your code will look somewhat like this:
+
+```javascript
+const editor = new EditorJS({
+  onReady: () => {
+    new Undo({ editor });
+    new DragDrop(editor);
+  },
+});
+```
 
 ## Development
 
