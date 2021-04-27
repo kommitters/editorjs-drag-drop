@@ -37,11 +37,9 @@
     "style-loader": "^0.21.0",
     "svg-inline-loader": "^0.8.2",
     "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3"
+    "webpack-cli": "^4.6.0"
   },
-  "dependencies": {
-    "axios": "^0.21.1"
-  },
+  "dependencies": {},
   "jest": {
     "transform": {
       "^.+\\.jsx?$": "babel-jest",
