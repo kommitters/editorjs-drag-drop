@@ -39,7 +39,6 @@
     "webpack": "^4.29.5",
     "webpack-cli": "^4.6.0"
   },
-  "dependencies": {},
   "jest": {
     "transform": {
       "^.+\\.jsx?$": "babel-jest",
