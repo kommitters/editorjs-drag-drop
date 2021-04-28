@@ -17,11 +17,10 @@ export default class DragDrop {
    * @param editor: object
    *   editor — Editor.js instance object
    */
-  constructor(editor) {
-    this.editor = editor;
-    this.api = this.editor.blocks;
-    this.holder = document.getElementById(this.editor.configuration.holder);
-
+  constructor({ configuration, blocks }) {
+    this.api = blocks;
+    this.holder = document.getElementById(configuration.holder);
+    this.readOnly = configuration.readOnly;
     this.startBlock = null;
     this.endBlock = null;
 
@@ -33,12 +32,14 @@ export default class DragDrop {
    * Sets the drag events listener.
    */
   setDragListener() {
-    const settingsButton = this.holder.querySelector('.ce-toolbar__settings-btn');
+    if (!this.readOnly) {
+      const settingsButton = this.holder.querySelector('.ce-toolbar__settings-btn');
 
-    settingsButton.setAttribute('draggable', 'true');
-    settingsButton.addEventListener('dragstart', () => {
-      this.startBlock = this.api.getCurrentBlockIndex();
-    });
+      settingsButton.setAttribute('draggable', 'true');
+      settingsButton.addEventListener('dragstart', () => {
+        this.startBlock = this.api.getCurrentBlockIndex();
+      });
+    }
   }
 
   /**
@@ -55,6 +56,15 @@ export default class DragDrop {
         }
       }
     });
+  }
+
+  /**
+   * Notify core that read-only mode is suppoorted
+   *
+   * @returns {boolean}
+   */
+  static get isReadOnlySupported() {
+    return true;
   }
 
   /**
