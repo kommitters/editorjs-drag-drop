@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.3 (10.05.2021)
+
+* Support holder being an HTML element or selector.
+* Updated packages with known security breaches.
+
 ## 0.1.2 (29.04.2021)
 
 * Added read-only mode support.
