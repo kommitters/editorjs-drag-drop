@@ -69,15 +69,22 @@ $ yarn build
 $ yarn test
 ```
 
+## Code of conduct
+We welcome everyone to contribute. Make sure you have read the [CODE_OF_CONDUCT][coc] before.
 
-## Contributing and Development
-Bug reports and pull requests are welcome on GitHub https://github.com/kommitters/editorjs-drag-drop. Everyone is welcome to participate in the project. If you are thinking about contributing to the project, please check our [Contributing Guide](https://github.com/kommitters/editorjs-drag-drop/blob/master/CONTRIBUTING.md).
+## Contributing
+For information on how to contribute, please refer to our [CONTRIBUTING][contributing] guide.
 
 ## Changelog
-See the [CHANGELOG](https://github.com/kommitters/editorjs-drag-drop/blob/master/CHANGELOG.md) for versions details.
+Features and bug fixes are listed in the [CHANGELOG][changelog] file.
 
 ## License
-See [LICENSE](https://github.com/kommitters/editorjs-drag-drop/blob/master/LICENSE) for details.
+This library is licensed under an MIT license. See [LICENSE][license] for details.
 
-## Credits
-Made with 💙 by [kommit](https://kommit.co)
+## Acknowledgements
+Made with 💙 by [kommitters Open Source](https://kommit.co)
+
+[license]: https://github.com/kommitters/editorjs-drag-drop/blob/master/LICENSE
+[coc]: https://github.com/kommitters/editorjs-drag-drop/blob/master/CODE_OF_CONDUCT.md
+[changelog]: https://github.com/kommitters/editorjs-drag-drop/blob/master/CHANGELOG.md
+[contributing]: https://github.com/kommitters/editorjs-drag-drop/blob/master/CONTRIBUTING.md
