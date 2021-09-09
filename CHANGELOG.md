@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.2.0 (10.05.2021)
+## 0.2.0 (09.09.2021)
 
 * Added a CI workflow with Github actions.
 * Updated packages with known security breaches.
