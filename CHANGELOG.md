@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.0 (10.05.2021)
+
+* Added a CI workflow with Github actions.
+* Updated packages with known security breaches.
+* Docs updated.
+
 ## 0.1.3 (10.05.2021)
 
 * Support holder being an HTML element or selector.
