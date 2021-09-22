@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import DragDrop from '../src/index';
 import editor from './fixtures/editor';
 
