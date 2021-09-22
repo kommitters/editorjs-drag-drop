@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.1 (22.09.2021)
+
+* Added react-editor-js support
+* Updated packages with known security breaches.
+
 ## 0.2.0 (09.09.2021)
 
 * Added a CI workflow with Github actions.
