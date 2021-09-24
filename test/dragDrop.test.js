@@ -6,7 +6,8 @@ import editor from './fixtures/editor';
 
 describe('DragDrop', () => {
   const content = '<div id="editorjs">'
-  + '<div id="first" class="ce-block"> First </div> <div id="second" class="ce-block"> Second </div>'
+  + '<div id="first" class="ce-block"><div class="ce-block__content"> First </div></div>'
+  + '<div id="second" class="ce-block"><div class="ce-block__content"> Second </div></div>'
   + '<div class="ce-toolbar__settings-btn">Drag</div></div>';
   document.body.innerHTML = content;
 
