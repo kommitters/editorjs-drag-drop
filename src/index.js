@@ -61,11 +61,8 @@ export default class DragDrop {
         blockContent.style.removeProperty('border-bottom');
       } else {
         const index = Object.keys(allBlocks).find((key) => allBlocks[key] === blockFocused);
-        if (index > this.startBlock) {
-          blockContent.style.borderBottom = borderStyle;
-        } else {
-          blockContent.style.borderTop = borderStyle;
-        }
+        if (index > this.startBlock) blockContent.style.borderBottom = borderStyle;
+        else blockContent.style.borderTop = borderStyle;
       }
     });
   }
