@@ -39,7 +39,32 @@ export default class DragDrop {
       settingsButton.addEventListener('dragstart', () => {
         this.startBlock = this.api.getCurrentBlockIndex();
       });
+      settingsButton.addEventListener('drag', () => {
+        const allBlocks = this.holder.querySelectorAll('.ce-block');
+        const blockFocused = this.holder.querySelector('.ce-block--drop-target');
+        this.setBorderBlocks(allBlocks, blockFocused);
+      });
     }
+  }
+  /**
+   * Sets dinamically the borders in the blocks when a block is dragged
+   * @param {object} allBlocks Contains all the blocks in the holder
+   * @param {HTMLElement} blockFocused Is the element where the dragged element will be dropped.
+   */
+
+  setBorderBlocks(allBlocks, blockFocused) {
+    const borderStyle = '1px dashed #aaa';
+    Object.values(allBlocks).forEach((block) => {
+      const blockContent = block.querySelector('.ce-block__content');
+      if (block !== blockFocused) {
+        blockContent.style.removeProperty('border-top');
+        blockContent.style.removeProperty('border-bottom');
+      } else {
+        const index = Object.keys(allBlocks).find((key) => allBlocks[key] === blockFocused);
+        if (index > this.startBlock) blockContent.style.borderBottom = borderStyle;
+        else blockContent.style.borderTop = borderStyle;
+      }
+    });
   }
 
   /**
@@ -51,6 +76,9 @@ export default class DragDrop {
       if (this.holder.contains(target)) {
         const dropTarget = this.getDropTarget(target);
         if (dropTarget) {
+          const blockContent = dropTarget.querySelector('.ce-block__content');
+          blockContent.style.removeProperty('border-top');
+          blockContent.style.removeProperty('border-bottom');
           this.endBlock = this.getTargetPosition(dropTarget);
           this.moveBlocks();
         }
