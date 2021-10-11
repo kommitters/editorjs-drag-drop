@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2 (11.10.2021)
+
+* Change the style adding a line to reference the Drag-Drop position.  
+
 ## 0.2.1 (22.09.2021)
 
 * Added react-editor-js support
