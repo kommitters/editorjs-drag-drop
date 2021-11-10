@@ -1,6 +1,6 @@
 {
   "name": "editorjs-drag-drop",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "keywords": [
     "drag",
     "drop",
@@ -28,9 +28,9 @@
     "babel-jest": "^27.2.1",
     "babel-loader": "^8.0.5",
     "css-loader": "^1.0.0",
-    "eslint": "^7.1.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-jest": "^23.13.2",
     "jest": "^27.2.1",
     "nock": "^12.0.3",
