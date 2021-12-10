@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1 (10.12.2021)
+
+* Add a feature to avoid moving an only block in the editor. 
+
 ## 1.0.0 (10.11.2021)
 
 * Updated packages with known security breaches. 
