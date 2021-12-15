@@ -40,9 +40,11 @@ export default class DragDrop {
         this.startBlock = this.api.getCurrentBlockIndex();
       });
       settingsButton.addEventListener('drag', () => {
-        const allBlocks = this.holder.querySelectorAll('.ce-block');
-        const blockFocused = this.holder.querySelector('.ce-block--drop-target');
-        this.setBorderBlocks(allBlocks, blockFocused);
+        if (!this.isTheOnlyBlock()) {
+          const allBlocks = this.holder.querySelectorAll('.ce-block');
+          const blockFocused = this.holder.querySelector('.ce-block--drop-target');
+          this.setBorderBlocks(allBlocks, blockFocused);
+        }
       });
     }
   }
@@ -117,12 +119,16 @@ export default class DragDrop {
     return Array.from(target.parentNode.children).indexOf(target);
   }
 
+  isTheOnlyBlock() {
+    return this.api.getBlocksCount() === 1;
+  }
+
   /**
    * Moves the dragged element to the drop position.
    *
    * @see {@link https://editorjs.io/blocks#move}
    */
   moveBlocks() {
-    this.api.move(this.endBlock, this.startBlock);
+    if (!this.isTheOnlyBlock()) this.api.move(this.endBlock, this.startBlock);
   }
 }
