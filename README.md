@@ -44,9 +44,9 @@ const editor = new EditorJS({
   },
 });
 ```
-### Usage with [react-editor-js](https://github.com/Jungwoo-An/react-editor-js).
+### Usage with React.
 
-If you are using [react-editor-js](https://github.com/Jungwoo-An/react-editor-js), you could create a function to handle the onReady property, the function will store the DragDrop instance. Then, you must call the function in onReady in the editorJS instance.   
+If you are using React, you could create a function to handle the onReady property, the function will store the DragDrop instance. Then, you must call the function in onReady in the editorJS instance.   
 
 ```javascript
 const handleReady = (editor) => {
@@ -72,6 +72,36 @@ const handleReady = (editor) => {
   new DragDrop(editor);
 };
 
+```
+### Usage with [react-editor-js](https://github.com/Jungwoo-An/react-editor-js).
+
+If you are using [react-editor-js](https://github.com/Jungwoo-An/react-editor-js), you should use the 'onInitialize' prop in the ReactEditorJS component to obtain the abstract editorjs as follow:
+
+```javascript
+........
+export const ReactEditor = () => {
+  const editorCore = React.useRef(null)
+    
+  const handleInitialize = React.useCallback((instance) => {
+    editorCore.current = instance
+  }, [])
+    
+  const handleReady = () => {
+    const editor = editorCore.current._editorJS; 
+    new Undo({ editor })
+    new DragDrop(editor);
+  };
+      
+  const ReactEditorJS = createReactEditorJS()
+  return(
+  <ReactEditorJS 
+    onInitialize={handleInitialize}
+    onReady = {handleReady}
+    tools={....} 
+    defaultValue={....}
+  />
+  )
+}
 ```
 
 ## Development
