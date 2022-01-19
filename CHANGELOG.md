@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2 (18.01.2022)
+
+* Added react-editor-js support
+
 ## 1.0.1 (10.12.2021)
 
 * Add a feature to avoid moving an only block in the editor. 
