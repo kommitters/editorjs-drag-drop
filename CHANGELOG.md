@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.3 (20.01.2022)
+
+* Updated packages with known security breaches.
+
 ## 1.0.2 (18.01.2022)
 
 * Added react-editor-js support
