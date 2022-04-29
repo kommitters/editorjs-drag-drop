@@ -17,7 +17,9 @@ export default class DragDrop {
    * @param editor: object
    *   editor — Editor.js instance object
    */
-  constructor({ configuration, blocks }) {
+  constructor({ configuration, blocks,toolbar },borderStyle) {
+    this.toolbar = toolbar;
+    this.borderStyle = borderStyle;
     this.api = blocks;
     this.holder = typeof configuration.holder === 'string' ? document.getElementById(configuration.holder) : configuration.holder;
     this.readOnly = configuration.readOnly;
@@ -63,8 +65,8 @@ export default class DragDrop {
         blockContent.style.removeProperty('border-bottom');
       } else {
         const index = Object.keys(allBlocks).find((key) => allBlocks[key] === blockFocused);
-        if (index > this.startBlock) blockContent.style.borderBottom = borderStyle;
-        else blockContent.style.borderTop = borderStyle;
+        if (index > this.startBlock) blockContent.style.borderBottom = this.borderStyle || borderStyle;
+        else blockContent.style.borderTop = this.borderStyle ||borderStyle;
       }
     });
   }
@@ -129,6 +131,9 @@ export default class DragDrop {
    * @see {@link https://editorjs.io/blocks#move}
    */
   moveBlocks() {
-    if (!this.isTheOnlyBlock()) this.api.move(this.endBlock, this.startBlock);
+    if (!this.isTheOnlyBlock()){
+      this.api.move(this.endBlock, this.startBlock);
+      this.toolbar.close();
+    }
   }
 }
