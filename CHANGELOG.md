@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.0 (29.04.2022)
+
+* Fix toolbar bug that stays open, since EditorJS 2.23+.
+* Allow customizing border style.
+
 ## 1.0.4 (29.03.2022)
 
 * Updated packages with known security breaches.
