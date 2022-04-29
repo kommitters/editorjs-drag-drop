@@ -10,6 +10,9 @@ const editor = {
   configuration: {
     holder: 'editorjs',
   },
+  toolbar: {
+    close: jest.fn()
+  }
 };
 
 export default editor;
