@@ -40,8 +40,15 @@ export default class DragDrop {
       settingsButton.setAttribute('draggable', 'true');
       settingsButton.addEventListener('dragstart', () => {
         this.startBlock = this.api.getCurrentBlockIndex();
+
+        // Here we clone the original item when we start the drag
+        if (this.holder.children[0].children[0].children[this.startBlock]) {
+          const item = this.holder.children[0].children[0].children[this.startBlock].children[0];
+          this.itemDragged = item.cloneNode(true);
+        }
       });
       settingsButton.addEventListener('drag', () => {
+        this.toolbar.close(); // this closes the toolbar when we start the drag
         if (!this.isTheOnlyBlock()) {
           const allBlocks = this.holder.querySelectorAll('.ce-block');
           const blockFocused = this.holder.querySelector('.ce-block--drop-target');
@@ -84,6 +91,14 @@ export default class DragDrop {
           blockContent.style.removeProperty('border-bottom');
           this.endBlock = this.getTargetPosition(dropTarget);
           this.moveBlocks();
+
+          // If the item changes something after drop it will replace the dropped item with the original
+          if (!this.holder.contains(this.itemDragged)) {
+            if (this.holder.children[0].children[0].children[this.endBlock]) {
+              const itemDropped = this.holder.children[0].children[0].children[this.endBlock].children[0];
+              itemDropped.replaceWith(this.itemDragged);
+            }
+          }
         }
       }
     });
@@ -130,9 +145,8 @@ export default class DragDrop {
    * @see {@link https://editorjs.io/blocks#move}
    */
   moveBlocks() {
-    if (!this.isTheOnlyBlock()){
+    if (!this.isTheOnlyBlock()) {
       this.api.move(this.endBlock, this.startBlock);
-      this.toolbar.close();
     }
   }
 }
