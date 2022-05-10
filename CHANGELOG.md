@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1 (10.05.2022)
+
+* Fix bug that removes last character every time it's used, since EditorJS 2.24.2.
+
 ## 1.1.0 (29.04.2022)
 
 * Fix toolbar bug that stays open, since EditorJS 2.23+.
