@@ -34,4 +34,13 @@ describe('DragDrop', () => {
     expect(dragDrop.endBlock).toEqual(1);
     expect(editor.blocks.move).toBeCalledWith(1, 0);
   });
+
+  it('check if has same text when button is dropped', () => {
+    const target = document.getElementById('second');
+    target.dispatchEvent(new Event('drop', { bubbles: true }));
+    expect(getTargetPosition).toBeCalled();
+    expect(dragDrop.endBlock).toEqual(1);
+    expect(editor.blocks.move).toBeCalledWith(1, 0);
+    expect(document.getElementById('second').textContent).toEqual(" Second ");
+  });
 });
