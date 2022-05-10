@@ -17,7 +17,7 @@ export default class DragDrop {
    * @param editor: object
    *   editor — Editor.js instance object
    */
-  constructor({ configuration, blocks, toolbar }, borderStyle) {
+  constructor({ configuration, blocks, toolbar, save }, borderStyle) {
     this.toolbar = toolbar;
     this.borderStyle = borderStyle || '1px dashed #aaa';
     this.api = blocks;
@@ -25,6 +25,7 @@ export default class DragDrop {
     this.readOnly = configuration.readOnly;
     this.startBlock = null;
     this.endBlock = null;
+    this.save = save;
 
     this.setDragListener();
     this.setDropListener();
@@ -41,11 +42,11 @@ export default class DragDrop {
       settingsButton.addEventListener('dragstart', () => {
         this.startBlock = this.api.getCurrentBlockIndex();
 
-        // Here we clone the original item when we start the drag
-        if (this.holder.children[0].children[0].children[this.startBlock]) {
-          const item = this.holder.children[0].children[0].children[this.startBlock].children[0];
-          this.itemDragged = item.cloneNode(true);
-        }
+        // Here we clone the original holder and data when we start the drag
+        this.holderDragged = this.api.getBlockByIndex(this.startBlock).holder.cloneNode(true);
+        this.save().then(data => {
+          this.dataDragged = data;
+        });
       });
       settingsButton.addEventListener('drag', () => {
         this.toolbar.close(); // this closes the toolbar when we start the drag
@@ -92,13 +93,7 @@ export default class DragDrop {
           this.endBlock = this.getTargetPosition(dropTarget);
           this.moveBlocks();
 
-          // If the item changes something after drop it will replace the dropped item with the original
-          if (!this.holder.contains(this.itemDragged)) {
-            if (this.holder.children[0].children[0].children[this.endBlock]) {
-              const itemDropped = this.holder.children[0].children[0].children[this.endBlock].children[0];
-              itemDropped.replaceWith(this.itemDragged);
-            }
-          }
+          this.checkBlockAfterDrop();
         }
       }
     });
@@ -147,6 +142,19 @@ export default class DragDrop {
   moveBlocks() {
     if (!this.isTheOnlyBlock()) {
       this.api.move(this.endBlock, this.startBlock);
+    }
+  }
+
+  /**
+   * If the item changes something after drop it will replace the dropped item with the original
+   */
+  checkBlockAfterDrop() {
+    // Check if the original holder is equals after drop
+    if (!this.holder.contains(this.holderDragged)) {
+      const blockDropped = this.dataDragged.blocks[this.startBlock];
+
+      // Updates the block dropped with the original and not corrupted data
+      this.api.update(blockDropped.id, blockDropped.data);
     }
   }
 }
