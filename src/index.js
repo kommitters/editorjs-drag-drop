@@ -123,7 +123,9 @@ export default class DragDrop {
    * @returns {HTMLElement}
    */
   getDropTarget(target) {
-    return target.classList.contains('ce-block') ? target : target.closest('.ce-block');
+    return target.classList.contains('ce-block')
+    ? target
+    : target.closest('.ce-block');
   }
 
   /**
