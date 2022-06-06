@@ -32,6 +32,21 @@ export default class DragDrop {
   }
 
   /**
+   * Sets the cursor at the begining of the drag element
+   */
+  setElementCursor(element) {
+    if (!element) return;
+    const range = document.createRange();
+    const selection = window.getSelection();
+
+    range.setStart(element.childNodes[0], 0);
+    range.collapse(true);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    element.focus();
+  }
+
+  /**
    * Sets the drag events listener.
    */
   setDragListener() {
@@ -41,18 +56,13 @@ export default class DragDrop {
       settingsButton.setAttribute('draggable', 'true');
       settingsButton.addEventListener('dragstart', () => {
         this.startBlock = this.api.getCurrentBlockIndex();
-
-        // Here we clone the original holder and data when we start the drag
-        this.holderDragged = this.api.getBlockByIndex(this.startBlock).holder.cloneNode(true);
-        this.save().then(data => {
-          this.dataDragged = data;
-        });
       });
       settingsButton.addEventListener('drag', () => {
         this.toolbar.close(); // this closes the toolbar when we start the drag
         if (!this.isTheOnlyBlock()) {
           const allBlocks = this.holder.querySelectorAll('.ce-block');
           const blockFocused = this.holder.querySelector('.ce-block--drop-target');
+          this.setElementCursor(blockFocused);
           this.setBorderBlocks(allBlocks, blockFocused);
         }
       });
@@ -92,8 +102,6 @@ export default class DragDrop {
           blockContent.style.removeProperty('border-bottom');
           this.endBlock = this.getTargetPosition(dropTarget);
           this.moveBlocks();
-
-          this.checkBlockAfterDrop();
         }
       }
     });
@@ -142,19 +150,6 @@ export default class DragDrop {
   moveBlocks() {
     if (!this.isTheOnlyBlock()) {
       this.api.move(this.endBlock, this.startBlock);
-    }
-  }
-
-  /**
-   * If the item changes something after drop it will replace the dropped item with the original
-   */
-  checkBlockAfterDrop() {
-    // Check if the original holder is equals after drop
-    if (!this.holder.contains(this.holderDragged)) {
-      const blockDropped = this.dataDragged.blocks[this.startBlock];
-
-      // Updates the block dropped with the original and not corrupted data
-      this.api.update(blockDropped.id, blockDropped.data);
     }
   }
 }
