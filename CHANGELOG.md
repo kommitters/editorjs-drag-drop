@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1.1 (06.06.2022)
+## 1.1.2 (06.06.2022)
 
 * Fix bug that removes the last character every time it's used, since EditorJS 2.24.2.
 * Fix bug that updates the block every time it's dropped
