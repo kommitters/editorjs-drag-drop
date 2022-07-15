@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.3 (15.07.2022)
+
+* Add workflow for automatic publishing in npm.
+
 ## 1.1.2 (06.06.2022)
 
 * Fix bug that removes the last character every time it's used, since EditorJS 2.24.2.
@@ -28,15 +32,15 @@
 
 ## 1.0.1 (10.12.2021)
 
-* Add a feature to avoid moving an only block in the editor. 
+* Add a feature to avoid moving an only block in the editor.
 
 ## 1.0.0 (10.11.2021)
 
-* Updated packages with known security breaches. 
+* Updated packages with known security breaches.
 
 ## 0.2.2 (11.10.2021)
 
-* Change the style adding a line to reference the Drag-Drop position.  
+* Change the style adding a line to reference the Drag-Drop position.
 
 ## 0.2.1 (22.09.2021)
 
