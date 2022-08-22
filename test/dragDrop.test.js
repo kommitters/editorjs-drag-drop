@@ -6,9 +6,9 @@ import editor from './fixtures/editor';
 
 describe('DragDrop', () => {
   const content = '<div id="editorjs">'
-  + '<div id="first" class="ce-block"><div class="ce-block__content"> First </div></div>'
-  + '<div id="second" class="ce-block"><div class="ce-block__content"> Second </div></div>'
-  + '<div class="ce-toolbar__settings-btn">Drag</div></div>';
+    + '<div id="first" class="ce-block"><div class="ce-block__content"> First </div></div>'
+    + '<div id="second" class="ce-block"><div class="ce-block__content"> Second </div></div>'
+    + '<div class="ce-toolbar__settings-btn">Drag</div></div>';
   document.body.innerHTML = content;
 
   let dragDrop;
@@ -29,17 +29,21 @@ describe('DragDrop', () => {
 
   it('executes move when button is dropped', () => {
     const target = document.getElementById('second');
+    expect(dragDrop.startBlock).toEqual(0);
     target.dispatchEvent(new Event('drop', { bubbles: true }));
     expect(getTargetPosition).toBeCalled();
     expect(dragDrop.endBlock).toEqual(1);
+    expect(dragDrop.startBlock).toEqual(null);
     expect(editor.blocks.move).toBeCalledWith(1, 0);
   });
 
   it('check if has same text when button is dropped', () => {
     const target = document.getElementById('second');
+    expect(dragDrop.startBlock).toEqual(0);
     target.dispatchEvent(new Event('drop', { bubbles: true }));
     expect(getTargetPosition).toBeCalled();
     expect(dragDrop.endBlock).toEqual(1);
+    expect(dragDrop.startBlock).toEqual(null);
     expect(editor.blocks.move).toBeCalledWith(1, 0);
     expect(document.getElementById('second').textContent).toEqual(" Second ");
   });
