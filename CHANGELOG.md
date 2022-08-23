@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.6 (23.08.2022)
+
+* Fix bug dropping images or videos into the editor incorrectly causes reordering of blocks.
+
 ## 1.1.5 (09.08.2022)
 
 * Add scorecards actions
