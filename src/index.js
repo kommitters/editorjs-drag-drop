@@ -94,7 +94,7 @@ export default class DragDrop {
   setDropListener() {
     document.addEventListener('drop', (event) => {
       const { target } = event;
-      if (this.holder.contains(target)) {
+      if (this.holder.contains(target) && this.startBlock !== null) {
         const dropTarget = this.getDropTarget(target);
         if (dropTarget) {
           const blockContent = dropTarget.querySelector('.ce-block__content');
@@ -104,6 +104,7 @@ export default class DragDrop {
           this.moveBlocks();
         }
       }
+      this.startBlock = null;
     });
   }
 
