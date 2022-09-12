@@ -23,6 +23,16 @@ Include module at your application
 import DragDrop from 'editorjs-drag-drop';
 ```
 
+### Load from CDN
+
+You can load a specific version of the package from [jsDelivr CDN](https://www.jsdelivr.com/package/npm/editorjs-drag-drop).
+
+Require this script on a page with Editor.js.
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/editorjs-drag-drop"></script>
+```
+
 ## Usage
 
 ```javascript
