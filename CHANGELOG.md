@@ -3,6 +3,7 @@
 ## 1.1.7 (12.09.2022)
 
 * Add OpenSSF BestPractices & Scorecard badges
+* Add CDN version documentation
 
 ## 1.1.6 (23.08.2022)
 
