@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.7 (12.09.2022)
+
+* Add OpenSSF BestPractices & Scorecard badges
+
 ## 1.1.6 (23.08.2022)
 
 * Fix bug dropping images or videos into the editor incorrectly causes reordering of blocks.
