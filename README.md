@@ -1,8 +1,5 @@
 # EditorJS Drag/Drop Plugin
 ![](https://badgen.net/badge/Editor.js/v2.0/blue)
-
-<sub>OpenSSF - Security Practices</sub>
-
 [![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/6468/badge)](https://bestpractices.coreinfrastructure.org/projects/6468)
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/kommitters/editorjs-drag-drop/badge)](https://api.securityscorecards.dev/projects/github.com/kommitters/editorjs-drag-drop)
 
