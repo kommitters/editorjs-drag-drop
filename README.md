@@ -1,6 +1,7 @@
-![](https://badgen.net/badge/Editor.js/v2.0/blue)
-
 # EditorJS Drag/Drop Plugin
+![](https://badgen.net/badge/Editor.js/v2.0/blue)
+[![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/6468/badge)](https://bestpractices.coreinfrastructure.org/projects/6468)
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/kommitters/editorjs-drag-drop/badge)](https://api.securityscorecards.dev/projects/github.com/kommitters/editorjs-drag-drop)
 
 Drag/Drop feature for [Editor.js](https://editorjs.io).
 
@@ -46,7 +47,7 @@ const editor = new EditorJS({
 ```
 ### Usage with React.
 
-If you are using React, you could create a function to handle the onReady property, the function will store the DragDrop instance. Then, you must call the function in onReady in the editorJS instance.   
+If you are using React, you could create a function to handle the onReady property, the function will store the DragDrop instance. Then, you must call the function in onReady in the editorJS instance.
 
 ```javascript
 const handleReady = (editor) => {
@@ -81,23 +82,23 @@ If you are using [react-editor-js](https://github.com/Jungwoo-An/react-editor-js
 ........
 export const ReactEditor = () => {
   const editorCore = React.useRef(null)
-    
+
   const handleInitialize = React.useCallback((instance) => {
     editorCore.current = instance
   }, [])
-    
+
   const handleReady = () => {
-    const editor = editorCore.current._editorJS; 
+    const editor = editorCore.current._editorJS;
     new Undo({ editor })
     new DragDrop(editor);
   };
-      
+
   const ReactEditorJS = createReactEditorJS()
   return(
-  <ReactEditorJS 
+  <ReactEditorJS
     onInitialize={handleInitialize}
     onReady = {handleReady}
-    tools={....} 
+    tools={....}
     defaultValue={....}
   />
   )
