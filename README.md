@@ -1,5 +1,6 @@
 # EditorJS Drag/Drop Plugin
 ![](https://badgen.net/badge/Editor.js/v2.0/blue)
+[![Coverage Status](https://coveralls.io/repos/github/kommitters/editorjs-drag-drop/badge.svg)](https://coveralls.io/github/kommitters/editorjs-drag-drop)
 [![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/6468/badge)](https://bestpractices.coreinfrastructure.org/projects/6468)
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/kommitters/editorjs-drag-drop/badge)](https://api.securityscorecards.dev/projects/github.com/kommitters/editorjs-drag-drop)
 
