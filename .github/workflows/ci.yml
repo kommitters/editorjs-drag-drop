@@ -15,5 +15,8 @@ jobs:
         with:
           node-version: 12.x
       - run: yarn
-      - run: yarn test
-      - uses: codecov/codecov-action@v1
+      - run: yarn test --coverage
+      - name: Coveralls
+        uses: coverallsapp/github-action@3284643be2c47fb6432518ecec17f1255e8a06a6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
