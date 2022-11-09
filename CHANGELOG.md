@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.9 (09.11.2022)
+
+* Bump loader-utils from 1.4.0 to 1.4.1
+
 ## 1.1.8 (28.10.2022)
 
 * Add Coverage Report with Coveralls
