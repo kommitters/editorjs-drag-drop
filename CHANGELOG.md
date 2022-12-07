@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.10 (07.12.2022)
+
+* Bump loader-utils from 1.4.1 to 1.4.2
+
 ## 1.1.9 (09.11.2022)
 
 * Bump loader-utils from 1.4.0 to 1.4.1
