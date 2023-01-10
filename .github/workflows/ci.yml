@@ -18,10 +18,10 @@ jobs:
         with:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
 
-      - uses: actions/checkout@dc323e67f16fb5f7663d20ff7941f27f5809e9b6 # v2.6.0
-      - uses: actions/setup-node@f1f314fca9dfce2769ece7d933488f076716723e # v1.4.6
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+      - uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
         with:
-          node-version: 12.x
+          node-version: 16.x
       - run: yarn
       - run: yarn test --coverage
       - name: Coveralls
