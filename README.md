@@ -1,4 +1,6 @@
 # EditorJS Drag/Drop Plugin
+
+![Stability Badge](https://img.shields.io/badge/stability-stable-green.svg)
 ![](https://badgen.net/badge/Editor.js/v2.0/blue)
 [![Coverage Status](https://coveralls.io/repos/github/kommitters/editorjs-drag-drop/badge.svg)](https://coveralls.io/github/kommitters/editorjs-drag-drop)
 [![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/6468/badge)](https://bestpractices.coreinfrastructure.org/projects/6468)
