@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.13 (13.01.2023)
+
+* Block egress traffic in GitHub Actions.
+* Add stability badge in README.
+
 ## 1.1.12 (27.12.2022)
 
 * Add Renovate as dependency update tool.
