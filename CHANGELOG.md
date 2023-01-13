@@ -2,6 +2,7 @@
 
 ## 1.1.13 (13.01.2023)
 
+* Update all dependencies.
 * Block egress traffic in GitHub Actions.
 * Add stability badge in README.
 
