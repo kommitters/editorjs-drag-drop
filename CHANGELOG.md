@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.14 (22.04.2024)
+
+* Update all dependencies. See [PR #131](https://github.com/kommitters/editorjs-drag-drop/pull/131)
+* Solve indicator border error. See [Issue #134](https://github.com/kommitters/editorjs-drag-drop/issues/134)
+* Update the CONTRIBUTING.md with the stale issues policy. See [PR #136](https://github.com/kommitters/editorjs-drag-drop/pull/136)
+
 ## 1.1.13 (13.01.2023)
 
 * Update all dependencies.
