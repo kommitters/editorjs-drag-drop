@@ -41,12 +41,14 @@ Require this script on a page with Editor.js.
 ```javascript
 const editor = new EditorJS({
   onReady: () => {
-    new DragDrop(editor, '1px solid red');
+    new DragDrop(editor);
   },
 });
 ```
 
-Select the block, drag the toolbar settings button, and drop it at the desired position. The optional second parameter adds styles to the indicator border; otherwise, the default border style value is used.
+Select the block, drag the toolbar settings button, and drop it at the desired position.
+
+You can optionally provide a second parameter to customize the indicator border style. If no parameter is provided, the default border style `1px dashed #aaa` is used.
 
 If you're already using [editorjs-undo](https://github.com/kommitters/editorjs-undo), then your code will look somewhat like this:
 
