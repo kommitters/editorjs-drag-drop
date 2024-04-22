@@ -49,6 +49,15 @@ At this point, you're waiting on us. We like to at least comment on pull request
 business days (typically, one business day). We may suggest some changes, improvements or
 alternatives.
 
+# Stale issues
+
+To ensure that our issue tracker remains organized and relevant, we have implemented a policy for handling Stale issues. Please review the following guidelines:
+
+1. **Marking as Stale**: Issues will be automatically marked as **Stale** after 60 days of inactivity.
+2. **Closing Stale Issues**: After an issue has been marked as Stale, a comment will be posted on the issue indicating that it will be closed if there is no further activity or information provided within a specified period.
+
+Thank you for helping us maintain a clean and efficient issue tracker!
+
 ## Additional resources
 
 * [EditorJS](https://editorjs.io/)

@@ -46,7 +46,9 @@ const editor = new EditorJS({
 });
 ```
 
-Select the block, drag the toolbar settings button and drop it at the desired position.
+Select the block, drag the toolbar settings button, and drop it at the desired position.
+
+You can optionally provide a second parameter to customize the indicator border style. If no parameter is provided, the default border style `1px dashed #aaa` is used.
 
 If you're already using [editorjs-undo](https://github.com/kommitters/editorjs-undo), then your code will look somewhat like this:
 

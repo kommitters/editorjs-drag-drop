@@ -17,7 +17,12 @@ export default class DragDrop {
    * @param editor: object
    *   editor — Editor.js instance object
    */
-  constructor({ configuration, blocks, toolbar, save }, borderStyle) {
+  constructor({
+    configuration,
+    blocks,
+    toolbar,
+    save,
+  }, borderStyle) {
     this.toolbar = toolbar;
     this.borderStyle = borderStyle || '1px dashed #aaa';
     this.api = blocks;
@@ -82,7 +87,7 @@ export default class DragDrop {
         blockContent.style.removeProperty('border-bottom');
       } else {
         const index = Object.keys(allBlocks).find((key) => allBlocks[key] === blockFocused);
-        if (index > this.startBlock) blockContent.style.borderBottom = this.borderStyle || borderStyle;
+        if (index > this.startBlock) blockContent.style.borderBottom = this.borderStyle;
         else blockContent.style.borderTop = this.borderStyle;
       }
     });
