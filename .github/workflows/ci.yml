@@ -13,23 +13,24 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Harden Runner
-        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
-        with:
-          disable-sudo: true
-          egress-policy: block
-          allowed-endpoints: >
-            coveralls.io:443
-            github.com:443
-            registry.yarnpkg.com:443
+    - name: Harden Runner
+      uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+      with:
+        disable-sudo: true
+        egress-policy: block
+        allowed-endpoints: >
+          coveralls.io:443
+          github.com:443
+          registry.yarnpkg.com:443
+          objects.githubusercontent.com:443
 
-      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4.1.3
-      - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
-        with:
-          node-version: 16.x
-      - run: yarn
-      - run: yarn test --coverage
-      - name: Coveralls
-        uses: coverallsapp/github-action@c203f016dd0ff7855ebef0ed852000c20c117148 # master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4.1.3
+    - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+      with:
+        node-version: 20.x
+    - run: yarn
+    - run: yarn test --coverage
+    - name: Coveralls
+      uses: coverallsapp/github-action@c203f016dd0ff7855ebef0ed852000c20c117148 # master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
