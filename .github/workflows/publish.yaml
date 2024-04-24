@@ -23,7 +23,7 @@ jobs:
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
         with:
-          node-version: "16.x"
+          node-version: 20.x
           registry-url: "https://registry.npmjs.org"
       - run: yarn install --immutable --immutable-cache --check-cache
       - run: npm publish

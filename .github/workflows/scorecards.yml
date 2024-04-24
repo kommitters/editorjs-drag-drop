@@ -34,7 +34,10 @@ jobs:
             fulcio.sigstore.dev:443
             github.com:443
             rekor.sigstore.dev:443
+            *.sigstore.dev:443
             sigstore-tuf-root.storage.googleapis.com:443
+            oss-fuzz-build-logs.storage.googleapis.com:443
+            www.bestpractices.dev:443
 
       - name: "Checkout code"
         uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4.1.3
