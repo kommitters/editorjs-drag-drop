@@ -1,4 +1,4 @@
-import './index.css';
+import "./index.css";
 
 /**
  * Drag/Drop feature for Editor.js.
@@ -56,23 +56,47 @@ export default class DragDrop {
    */
   setDragListener() {
     if (!this.readOnly) {
-      const settingsButton = this.holder.querySelector('.ce-toolbar__settings-btn');
+      const settingsButton = this.holder.querySelector(
+        ".ce-toolbar__settings-btn"
+      );
+      if (settingsButton) {
+        this.initializeDragListener(settingsButton);
+      } else {
+        // If there's no settings button, we wait for it to be added to the DOM
+        const observer = new MutationObserver((mutations, obs) => {
+          const settingsButton = this.holder.querySelector(
+            ".ce-toolbar__settings-btn"
+          );
+          if (settingsButton) {
+            this.initializeDragListener(settingsButton);
+            obs.disconnect();
+          }
+        });
 
-      settingsButton.setAttribute('draggable', 'true');
-      settingsButton.addEventListener('dragstart', () => {
-        this.startBlock = this.api.getCurrentBlockIndex();
-      });
-      settingsButton.addEventListener('drag', () => {
-        this.toolbar.close(); // this closes the toolbar when we start the drag
-        if (!this.isTheOnlyBlock()) {
-          const allBlocks = this.holder.querySelectorAll('.ce-block');
-          const blockFocused = this.holder.querySelector('.ce-block--drop-target');
-          this.setElementCursor(blockFocused);
-          this.setBorderBlocks(allBlocks, blockFocused);
-        }
-      });
+        observer.observe(this.holder, {
+          childList: true,
+          subtree: true,
+        });
+      }
     }
   }
+
+  initializeDragListener(settingsButton) {
+    settingsButton.setAttribute("draggable", "true");
+    settingsButton.addEventListener("dragstart", () => {
+      this.startBlock = this.api.getCurrentBlockIndex();
+    });
+      settingsButton.addEventListener('drag', () => {
+      this.toolbar.close(); // this closes the toolbar when we start the drag
+      if (!this.isTheOnlyBlock()) {
+          const allBlocks = this.holder.querySelectorAll('.ce-block');
+          const blockFocused = this.holder.querySelector('.ce-block--drop-target');
+        this.setElementCursor(blockFocused);
+        this.setBorderBlocks(allBlocks, blockFocused);
+      }
+    });
+  }
+  
   /**
    * Sets dinamically the borders in the blocks when a block is dragged
    * @param {object} allBlocks Contains all the blocks in the holder
