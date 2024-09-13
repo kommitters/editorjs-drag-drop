@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.16 (13.09.2024)
+
+* Bundle update (#158). See [PR #158](https://github.com/kommitters/editorjs-drag-drop/pull/158)
+
 ## 1.1.15 (06.09.2024)
 
 *  Bug fix: Ensure `setAttribute` fires after editor is ready. See [Issue #148](https://github.com/kommitters/editorjs-drag-drop/issues/148)
