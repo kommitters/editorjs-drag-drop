@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.16 (13.09.2024)
+
+* Bundle update (#158). See [PR #158](https://github.com/kommitters/editorjs-drag-drop/pull/158)
+
+## 1.1.15 (06.09.2024)
+
+*  Bug fix: Ensure `setAttribute` fires after editor is ready. See [Issue #148](https://github.com/kommitters/editorjs-drag-drop/issues/148)
+
+* Updated README: Added section on plugin usage and customizing the indicator style to enhance documentation clarity.
+
 ## 1.1.14 (24.04.2024)
 
 * Update all dependencies. See [PR #131](https://github.com/kommitters/editorjs-drag-drop/pull/131)
