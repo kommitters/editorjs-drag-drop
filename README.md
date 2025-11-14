@@ -1,3 +1,30 @@
+# 🚨 URGENT: Maintenance Transition 🚨
+This project is officially entering a period of passive maintenance and will no longer receive active development or major bug fixes from **kommit**.
+
+We are fully committed to keeping this project alive within the open-source community! We believe in the value this project provides, and we are actively seeking new, passionate contributors to take over ownership.
+
+## 🚀 Take Over This Project!
+We need a reliable steward for the future development of this repository.
+
+### Why Take Ownership?
+
+**Full Control:** Gain administrative rights and full control over the project's direction.
+
+**Visibility:** Showcase your expertise by leading an established open-source project.
+
+**Impact:** Directly support the users who rely on this plugin.
+
+### How to Request Ownership
+
+To apply for project ownership, you must create an issue using our dedicated template:
+
+1. Go to the [Issues](https://github.com/kommitters/editorjs-drag-drop/issues/new/choose) page
+2. Select the **"Project Ownership / Maintainer Request"** template
+3. Fill out all required sections completely
+4. Submit the issue for review
+
+**Important:** Ownership requests submitted through other channels (comments, pull requests, emails) will not be considered. Please use the official issue template to ensure your application is properly reviewed.
+
 # EditorJS Drag/Drop Plugin
 
 ![Stability Badge](https://img.shields.io/badge/stability-stable-green.svg)
